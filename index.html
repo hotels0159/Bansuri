@@ -220,7 +220,6 @@
     }
     .card:hover img { transform: scale(1.05); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 768px) {
       .sticky-nav { 
         flex-direction: column; 
@@ -267,7 +266,6 @@
       }
     }
 
-    /* ── Why Choose Us (unchanged) ── */
     .why-section { text-align: center; }
 
     .why-carousel-container {
@@ -352,7 +350,6 @@
     }
     footer a { color: #25D366; text-decoration: none; font-weight: 600; }
 
-    /* Recipe gallery (unchanged) */
     .recipe-gallery {
       display: flex;
       overflow-x: auto;
@@ -406,6 +403,64 @@
       text-align: center;
       margin: 0;
     }
+
+    /* Admin Login Styles */
+    #adminModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 420px;
+      text-align: center;
+      box-shadow: 0 15px 50px rgba(165,42,42,0.3);
+      border: 3px solid var(--gold);
+    }
+    .modal-content h2 {
+      color: var(--chai-red);
+      margin-bottom: 1.5rem;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 1rem;
+      margin: 0.8rem 0;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 1.1rem;
+    }
+    .modal-content button {
+      background: var(--chai-red);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    #adminLoginBtn, #logoutBtn {
+      position: fixed;
+      bottom: 30px;
+      background: var(--chai-red);
+      color: white;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+      cursor: pointer;
+      z-index: 9998;
+      font-size: 16px;
+    }
+    #adminLoginBtn { left: 30px; }
+    #logoutBtn { right: 30px; display: none; background: #d32f2f; }
   </style>
 </head>
 <body>
@@ -440,14 +495,12 @@
     </div>
   </section>
 
-  <!-- UPDATED PRODUCTS SECTION – Ecommerce style -->
   <section id="products" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:4.5rem; color:var(--chai-red); margin:5rem 0 3.5rem;">
         Our Premium Chai Premixes
       </h2>
 
-      <!-- Optional filter bar -->
       <div style="text-align:center; margin-bottom:3rem; font-size:1.3rem;">
         <button style="background:var(--chai-red); color:white; border:none; padding:0.8rem 1.8rem; border-radius:30px; margin:0 0.6rem; cursor:pointer;">All</button>
         <button style="background:transparent; border:2px solid var(--gold); color:var(--chai-red); padding:0.8rem 1.8rem; border-radius:30px; margin:0 0.6rem; cursor:pointer;">Best Sellers</button>
@@ -456,7 +509,6 @@
 
       <div class="grid">
 
-        <!-- Amruttulya -->
         <div class="card" style="position:relative; overflow:hidden;">
           <div style="position:absolute; top:15px; left:15px; background:#e63946; color:white; font-weight:700; padding:0.5rem 1rem; border-radius:50px; font-size:1.1rem; z-index:10; box-shadow:0 4px 12px rgba(230,57,70,0.4);">
             -25% OFF
@@ -485,7 +537,6 @@
           </div>
         </div>
 
-        <!-- Jaggery Tea -->
         <div class="card" style="position:relative; overflow:hidden;">
           <div style="position:absolute; top:15px; right:15px; background:#ffb300; color:#2c1508; font-weight:700; padding:0.5rem 1.2rem; border-radius:50px; font-size:1.1rem; z-index:10; box-shadow:0 4px 12px rgba(255,179,0,0.4);">
             Best Seller
@@ -512,7 +563,6 @@
           </div>
         </div>
 
-        <!-- Basundi Tea -->
         <div class="card" style="position:relative; overflow:hidden;">
           <img src="am_tea.jpeg" alt="Basundi Tea">
           <div style="padding:1.5rem 1.2rem;">
@@ -537,7 +587,6 @@
           </div>
         </div>
 
-        <!-- Lemon Tea -->
         <div class="card" style="position:relative; overflow:hidden;">
           <img src="LEMON.jpg" alt="Lemon Tea">
           <div style="padding:1.5rem 1.2rem;">
@@ -562,7 +611,6 @@
           </div>
         </div>
 
-        <!-- Coffee Premix -->
         <div class="card" style="position:relative; overflow:hidden;">
           <img src="coffee.jpg" alt="Coffee Premix">
           <div style="padding:1.5rem 1.2rem;">
@@ -597,7 +645,6 @@
     </div>
   </section>
 
-  <!-- Why Choose Us (unchanged) -->
   <section id="why" class="tea-vibe-bg why-section">
     <div class="container">
       <h2 style="font-size:4.2rem; color:var(--chai-red); margin:5rem 0 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.25);">
@@ -635,7 +682,6 @@
             <p>Thousands of happy customers — real boiled chai experience at home or shop</p>
           </div>
 
-          <!-- Duplicates for loop -->
           <div class="why-card">
             <div class="why-icon">🍃</div>
             <strong>100% Pure Tea</strong>
@@ -673,7 +719,6 @@
     </div>
   </section>
 
-  <!-- Recipe section (unchanged) -->
   <section id="recipe" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Perfect Chai Recipes with Bansuri Premix</h2>
@@ -707,7 +752,6 @@
     </div>
   </section>
 
-  <!-- Add-ons (unchanged) -->
   <section id="addons" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.5rem; color:var(--chai-red); margin:4rem 0 2.5rem;">Additional Products for Your Tea Setup</h2>
@@ -728,7 +772,6 @@
     </div>
   </section>
 
-  <!-- Wholesale (unchanged) -->
   <section id="wholesale" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Wholesale & Franchise Opportunity</h2>
@@ -746,6 +789,84 @@
     <p>© Bansuri Tea | Real Boiled Chai Experience – Brewed with Love in MAHARASHTRA</p>
     <p>Call / WhatsApp: <a href="https://wa.me/91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
   </footer>
+
+  <!-- Admin Login Button -->
+  <div id="adminLoginBtn">Admin Login</div>
+  <div id="logoutBtn">Logout</div>
+
+  <!-- Login Modal -->
+  <div id="adminModal">
+    <div class="modal-content">
+      <h2>Bansuri Admin Login</h2>
+      <input type="text" id="adminUsername" placeholder="Username">
+      <input type="password" id="adminPassword" placeholder="Password">
+      <p id="loginError" style="color:#c62828; margin:1rem 0; font-weight:600;"></p>
+      <button onclick="adminLogin()">Login</button>
+    </div>
+  </div>
+
+  <script>
+  // === ADMIN LOGIN SYSTEM ===
+  const ADMIN_USERNAME = "elitee";           // ← Change if you want
+  const ADMIN_PASSWORD = "bansuri2026";      // ← Your secret password – change this!
+
+  const modal = document.getElementById("adminModal");
+  const loginBtn = document.getElementById("adminLoginBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
+  let isAdminLoggedIn = false;
+
+  loginBtn.onclick = () => { modal.style.display = "flex"; };
+
+  function adminLogin() {
+    const user = document.getElementById("adminUsername").value.trim();
+    const pass = document.getElementById("adminPassword").value;
+
+    if (user === ADMIN_USERNAME && pass === ADMIN_PASSWORD) {
+      isAdminLoggedIn = true;
+      modal.style.display = "none";
+      loginBtn.style.display = "none";
+      logoutBtn.style.display = "block";
+      document.getElementById("loginError").textContent = "";
+      enableEditMode();
+      alert("Welcome Elitee! Edit mode activated – change any price or discount now ☕");
+    } else {
+      document.getElementById("loginError").textContent = "Wrong username or password!";
+    }
+  }
+
+  logoutBtn.onclick = () => {
+    isAdminLoggedIn = false;
+    loginBtn.style.display = "block";
+    logoutBtn.style.display = "none";
+    disableEditMode();
+    alert("Logged out. Edit mode off.");
+  };
+
+  modal.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+
+  // === EDIT MODE ===
+  function enableEditMode() {
+    document.querySelectorAll('.card h3, .card p, .card span, [style*="background:#e63946"], [style*="background:#ffb300"]').forEach(el => {
+      el.contentEditable = true;
+      el.style.outline = "2px dashed #ffb300";
+      el.style.background = "#fffde7";
+    });
+  }
+
+  function disableEditMode() {
+    document.querySelectorAll('[contenteditable="true"]').forEach(el => {
+      el.contentEditable = false;
+      el.style.outline = "none";
+      el.style.background = "none";
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") modal.style.display = "none";
+  });
+  </script>
 
 </body>
 </html>
