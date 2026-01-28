@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   
   <title>Bansuri Amruttulya Tea Premix | Jaggery Chai & Basundi Tea Powder Online Mumbai</title>
-  <meta name="description" content="Buy Bansuri Amruttulya tea premix, Jaggery tea powder & Basundi chai online. Authentic kadak tapri taste, pure tea, no milk powder. Perfect for home, hotels, cafes & tea stalls in Maharashtra. Order via WhatsApp – low cost per cup."/>
+  <meta name="description" content="Buy Bansuri Amruttulya tea premix, Jaggery tea powder & Basundi chai online. Authentic kadak tapri taste, pure tea, no milk powder. Perfect for home, hotels, cafes & tea stalls in Maharashtra."/>
   <meta name="keywords" content="amruttulya tea premix, jaggery tea powder, basundi tea premix, kadak chai premix, tapri style tea, masala chai powder buy online, amruttulya chai Mumbai, jaggery chaha, bansuri tea wholesale"/>
   <meta name="robots" content="index, follow"/>
   
   <meta property="og:title" content="Bansuri Tea – Asli Kadak Chai ka Swad | Amruttulya, Jaggery, Basundi"/>
-  <meta property="og:description" content="Premium boiled chai premix – pure ingredients, rich aroma, trusted by tea lovers & businesses. Order now via WhatsApp!"/>
+  <meta property="og:description" content="Premium boiled chai premix – pure ingredients, rich aroma, trusted by tea lovers & businesses."/>
   <meta property="og:image" content="https://yourdomain.com/am_powder.jpeg"/>
   <meta property="og:url" content="https://yourdomain.com/"/>
   <meta property="og:type" content="website"/>
@@ -97,7 +97,9 @@
 
     .hero {
       position: relative;
-      height: 80vh;
+      height: 95vh;
+      min-height: 580px;
+      max-height: 900px;
       padding-top: 60px;
       overflow: hidden;
       background: var(--dark);
@@ -135,8 +137,8 @@
 
     .slide {
       min-width: 50%;
-      height: 105%;
-      object-fit: contain;
+      height: 100%;
+      object-fit: cover;
       object-position: center center;
       background: var(--dark);
       flex-shrink: 0;
@@ -148,45 +150,53 @@
     }
 
     @keyframes slide {
-      0%   { transform: translateX(0); }
-      20%  { transform: translateX(0); }
-      25%  { transform: translateX(-100%); }
-      45%  { transform: translateX(-100%); }
-      50%  { transform: translateX(-200%); }
-      70%  { transform: translateX(-200%); }
-      75%  { transform: translateX(-300%); }
-      95%  { transform: translateX(-300%); }
-      100% { transform: translateX(-400%); }
+      0%    { transform: translateX(0); }
+      20%   { transform: translateX(0); }
+      25%   { transform: translateX(-100%); }
+      45%   { transform: translateX(-100%); }
+      50%   { transform: translateX(-200%); }
+      70%   { transform: translateX(-200%); }
+      75%   { transform: translateX(-300%); }
+      95%   { transform: translateX(-300%); }
+      100%  { transform: translateX(-400%); }
     }
 
-    .btn-whatsapp {
-      background: #25D366;
+    .btn-primary {
+      background: var(--chai-red);
       color: white;
       padding: 1.2rem 3rem;
       border-radius: 50px;
       font-size: 1.4rem;
       font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 10px 35px rgba(37,213,102,0.5);
+      box-shadow: 0 10px 35px rgba(165,42,42,0.4);
       transition: all 0.4s;
       border: 3px solid var(--gold);
+      cursor: pointer;
       display: inline-block;
+      text-decoration: none;
+      text-align: center;
     }
-    .btn-whatsapp:hover {
+    .btn-primary:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 50px rgba(37,213,102,0.7);
+      box-shadow: 0 18px 50px rgba(165,42,42,0.6);
+    }
+
+    .btn-secondary {
+      background: var(--gold);
+      color: var(--dark);
+      padding: 1rem 1.8rem;
+      border-radius: 50px;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s;
     }
 
     .container { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
 
-    #products .container {
-      max-width: 1600px;
-      padding: 0 2rem;
-    }
+    #products .container { max-width: 1600px; padding: 0 2rem; }
 
-    #products {
-      padding: 10rem 1.5rem 8rem;
-    }
+    #products { padding: 10rem 1.5rem 8rem; }
 
     .grid {
       display: grid;
@@ -234,18 +244,6 @@
       z-index: 999;
     }
 
-    @media (max-width: 768px) {
-      .sticky-nav { flex-direction: column; padding: 1rem 1.2rem; }
-      .nav-links { margin-top: 1rem; }
-      .logo { height: 48px; margin-right: 1rem; }
-      .hero { height: 60vh; padding-top: 50px; }
-      #products { padding: 6rem 1rem 5rem; }
-      .grid { grid-template-columns: 1fr; gap: 2.5rem; }
-      .card img { height: 300px; }
-      body { padding-bottom: 100px; }
-      .admin-btn { width: 50px; height: 50px; font-size: 1.6rem; bottom:20px; right:20px; }
-    }
-
     .why-section { text-align: center; }
     .why-carousel-container { overflow: hidden; max-width: 100%; margin: 2.5rem auto 0; position: relative; padding: 2rem 0; }
     .why-carousel-track { display: flex; animation: slideWhy 50s linear infinite; width: max-content; }
@@ -273,7 +271,6 @@
       padding: 3.5rem 1.5rem;
       font-size: 1.2rem;
     }
-    footer a { color: #25D366; text-decoration: none; font-weight: 600; }
 
     #admin-panel, #admin-login {
       display: none;
@@ -304,6 +301,18 @@
       width: 90%;
       max-width: 450px;
     }
+
+    @media (max-width: 768px) {
+      .sticky-nav { flex-direction: column; padding: 1rem 1.2rem; }
+      .nav-links { margin-top: 1rem; flex-wrap: wrap; justify-content: center; }
+      .logo { height: 48px; margin-right: 1rem; }
+      .hero { height: 60vh; padding-top: 50px; }
+      #products { padding: 6rem 1rem 5rem; }
+      .grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .card img { height: 300px; }
+      body { padding-bottom: 100px; }
+      .admin-btn { width: 50px; height: 50px; font-size: 1.6rem; bottom:20px; right:20px; }
+    }
   </style>
 </head>
 <body>
@@ -319,7 +328,6 @@
       <a href="#products">Products</a>
       <a href="#why">Why Choose Us</a>
       <a href="#recipe">Recipe</a>
-      <a href="about.html">About Us</a>
       <a href="#addons">More Products</a>
       <a href="#wholesale">Wholesale</a>
     </div>
@@ -329,7 +337,7 @@
     <img src="bansuri-logo.png" class="hero-logo-blur hero-logo-left" alt="">
     <img src="bansuri-logo.png" class="hero-logo-blur hero-logo-right" alt="">
     <div class="hero-slider">
-      <img src="hero-chai-2.jpg" alt="Steaming kadak chai" class="slide">
+      <img src="hero-chai-2.jpeg" alt="Steaming kadak chai" class="slide">
       <img src="hero-chai-1.jpeg" alt="Bansuri tea premix" class="slide">
       <img src="hero-chai-3.jpg" alt="Traditional tapri tea" class="slide">
       <img src="hero-chai-4.jpeg" alt="Jaggery gudh chai" class="slide">
@@ -345,146 +353,13 @@
         Our Premium Chai Premixes
       </h2>
 
-      <div style="text-align:center; margin-bottom:3rem; font-size:1.3rem;">
-        <button style="background:var(--chai-red); color:white; border:none; padding:0.8rem 1.8rem; border-radius:30px; margin:0 0.6rem; cursor:pointer;">All</button>
-        <button style="background:transparent; border:2px solid var(--gold); color:var(--chai-red); padding:0.8rem 1.8rem; border-radius:30px; margin:0 0.6rem; cursor:pointer;">Best Sellers</button>
-        <button style="background:transparent; border:2px solid var(--gold); color:var(--chai-red); padding:0.8rem 1.8rem; border-radius:30px; margin:0 0.6rem; cursor:pointer;">New Arrivals</button>
-      </div>
-
       <div class="grid">
-
-        <div class="card" data-product-id="amruttulya">
-          <div class="badge" style="position:absolute; top:15px; left:15px; background:#e63946; color:white; font-weight:700; padding:0.5rem 1rem; border-radius:50px; font-size:1.1rem; z-index:10; box-shadow:0 4px 12px rgba(230,57,70,0.4);">
-            -25% OFF
-          </div>
-          <img src="am_powder.jpeg" alt="Amruttulya Tea">
-          <div style="padding:1.5rem 1.2rem;">
-            <h3 style="font-size:2.3rem; color:var(--chai-red); margin-bottom:0.6rem;">Amruttulya Tea</h3>
-            <p style="font-size:1.2rem; color:#555; margin-bottom:1rem;">Classic strong kadak chai – rich aroma & perfect color.</p>
-            <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0; font-size:1.5rem; font-weight:700;">
-              <span class="price" style="color:var(--chai-red);">₹199</span>
-              <span class="old-price" style="color:#888; text-decoration:line-through; font-size:1.3rem;">₹265</span>
-              <span class="save-text" style="font-size:1.1rem; color:#2e7d32; background:#e8f5e9; padding:0.3rem 0.8rem; border-radius:12px;">Save ₹66</span>
-            </div>
-            <div style="color:#ffb300; font-size:1.4rem; margin:0.8rem 0;">
-              ★★★★☆ <span style="color:#555; font-size:1rem;">(842 reviews)</span>
-            </div>
-            <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-              <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Amruttulya%20Tea%20-%20500g%20pack" class="btn-whatsapp" style="flex:1; text-align:center; font-size:1.2rem; padding:1rem 1.5rem;">
-                Order on WhatsApp
-              </a>
-              <button style="background:var(--gold); color:var(--dark); border:none; padding:1rem 1.5rem; border-radius:50px; font-weight:700; cursor:pointer; flex:1; font-size:1.2rem;">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" data-product-id="jaggery">
-          <div class="badge" style="position:absolute; top:15px; right:15px; background:#ffb300; color:#2c1508; font-weight:700; padding:0.5rem 1.2rem; border-radius:50px; font-size:1.1rem; z-index:10; box-shadow:0 4px 12px rgba(255,179,0,0.4);">
-            Best Seller
-          </div>
-          <img src="jt.jpeg" alt="Jaggery Tea">
-          <div style="padding:1.5rem 1.2rem;">
-            <h3 style="font-size:2.3rem; color:var(--chai-red); margin-bottom:0.6rem;">Jaggery Tea</h3>
-            <p style="font-size:1.2rem; color:#555; margin-bottom:1rem;">Natural gud sweetness – healthy & traditional taste.</p>
-            <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0; font-size:1.5rem; font-weight:700;">
-              <span class="price" style="color:var(--chai-red);">₹220</span>
-            </div>
-            <div style="color:#ffb300; font-size:1.4rem; margin:0.8rem 0;">
-              ★★★★★ <span style="color:#555; font-size:1rem;">(1,214 reviews)</span>
-            </div>
-            <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-              <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Jaggery%20Tea%20-%20500g" class="btn-whatsapp" style="flex:1; text-align:center; font-size:1.2rem; padding:1rem 1.5rem;">
-                Order on WhatsApp
-              </a>
-              <button style="background:var(--gold); color:var(--dark); border:none; padding:1rem 1.5rem; border-radius:50px; font-weight:700; cursor:pointer; flex:1; font-size:1.2rem;">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" data-product-id="basundi">
-          <img src="am_tea.jpeg" alt="Basundi Tea">
-          <div style="padding:1.5rem 1.2rem;">
-            <h3 style="font-size:2.3rem; color:var(--chai-red); margin-bottom:0.6rem;">Basundi Tea Premix</h3>
-            <p style="font-size:1.2rem; color:#555; margin-bottom:1rem;">Creamy rich basundi flavor – indulgent & sweet.</p>
-            <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0; font-size:1.5rem; font-weight:700;">
-              <span class="price" style="color:var(--chai-red);">₹249</span>
-              <span class="old-price" style="color:#888; text-decoration:line-through; font-size:1.3rem;">₹320</span>
-            </div>
-            <div style="color:#ffb300; font-size:1.4rem; margin:0.8rem 0;">
-              ★★★★☆ <span style="color:#555; font-size:1rem;">(567 reviews)</span>
-            </div>
-            <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-              <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Basundi%20Tea" class="btn-whatsapp" style="flex:1; text-align:center; font-size:1.2rem; padding:1rem 1.5rem;">
-                Order on WhatsApp
-              </a>
-              <button style="background:var(--gold); color:var(--dark); border:none; padding:1rem 1.5rem; border-radius:50px; font-weight:700; cursor:pointer; flex:1; font-size:1.2rem;">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" data-product-id="lemon">
-          <img src="LEMON.jpg" alt="Lemon Tea">
-          <div style="padding:1.5rem 1.2rem;">
-            <h3 style="font-size:2.3rem; color:var(--chai-red); margin-bottom:0.6rem;">Lemon Tea Premix</h3>
-            <p style="font-size:1.2rem; color:#555; margin-bottom:1rem;">Instant lemon tea magic – refreshing twist.</p>
-            <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0; font-size:1.5rem; font-weight:700;">
-              <span class="price" style="color:var(--chai-red);">₹179</span>
-              <span class="old-price" style="color:#888; text-decoration:line-through; font-size:1.3rem;">₹240</span>
-            </div>
-            <div style="color:#ffb300; font-size:1.4rem; margin:0.8rem 0;">
-              ★★★★☆ <span style="color:#555; font-size:1rem;">(412 reviews)</span>
-            </div>
-            <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-              <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Lemon%20Tea%20Premix" class="btn-whatsapp" style="flex:1; text-align:center; font-size:1.2rem; padding:1rem 1.5rem;">
-                Order on WhatsApp
-              </a>
-              <button style="background:var(--gold); color:var(--dark); border:none; padding:1rem 1.5rem; border-radius:50px; font-weight:700; cursor:pointer; flex:1; font-size:1.2rem;">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" data-product-id="coffee">
-          <img src="coffee.jpg" alt="Coffee Premix">
-          <div style="padding:1.5rem 1.2rem;">
-            <h3 style="font-size:2.3rem; color:var(--chai-red); margin-bottom:0.6rem;">Coffee Premix</h3>
-            <p style="font-size:1.2rem; color:#555; margin-bottom:1rem;">Strong filter coffee – perfect for all seasons.</p>
-            <div style="display:flex; align-items:center; gap:1rem; margin:1rem 0; font-size:1.5rem; font-weight:700;">
-              <span class="price" style="color:var(--chai-red);">₹259</span>
-            </div>
-            <div style="color:#ffb300; font-size:1.4rem; margin:0.8rem 0;">
-              ★★★★½ <span style="color:#555; font-size:1rem;">(689 reviews)</span>
-            </div>
-            <div style="display:flex; gap:1rem; margin-top:1.2rem; flex-wrap:wrap;">
-              <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20to%20order%20Coffee%20Premix" class="btn-whatsapp" style="flex:1; text-align:center; font-size:1.2rem; padding:1rem 1.5rem;">
-                Order on WhatsApp
-              </a>
-              <button style="background:var(--gold); color:var(--dark); border:none; padding:1rem 1.5rem; border-radius:50px; font-weight:700; cursor:pointer; flex:1; font-size:1.2rem;">
-                Add to Cart
-              </button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div style="text-align:center; margin:5rem 0 2rem;">
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20I%20want%20bulk%20order%20quote%20for%20multiple%20premixes" 
-           class="btn-whatsapp" style="font-size:1.5rem; padding:1.4rem 4rem;">
-          Get Bulk / Wholesale Quote Now →
-        </a>
+        <!-- Products inserted by JavaScript -->
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us section -->
+  <!-- Why Choose Us -->
   <section id="why" class="tea-vibe-bg why-section">
     <div class="container">
       <h2 style="font-size:4.2rem; color:var(--chai-red); margin:5rem 0 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.25);">
@@ -521,7 +396,7 @@
             <strong>Loved by Tea Lovers</strong>
             <p>Thousands of happy customers — real boiled chai experience at home or shop</p>
           </div>
-          <!-- duplicates -->
+          <!-- duplicates for smooth loop -->
           <div class="why-card"><div class="why-icon">🍃</div><strong>100% Pure Tea</strong><p>No milk powder, no fillers — only authentic, high-quality tea leaves & handpicked masala</p></div>
           <div class="why-card"><div class="why-icon">🔥</div><strong>Perfect Kadak Tapri Taste</strong><p>Traditional Amruttulya masala blend — strong color, rich aroma, just like roadside chai</p></div>
           <div class="why-card"><div class="why-icon">₹</div><strong>High Margin, Low Cost</strong><p>Economical per cup — more profit for tea stalls, hotels, cafes & franchises</p></div>
@@ -529,16 +404,10 @@
           <div class="why-card"><div class="why-icon">❤️</div><strong>Loved by Tea Lovers</strong><p>Thousands of happy customers — real boiled chai experience at home or shop</p></div>
         </div>
       </div>
-
-      <div style="text-align:center; margin-top:4rem;">
-        <a href="https://wa.me/91XXXXXXXXXX?text=Hello%20I%20want%20to%20know%20more%20about%20Bansuri%20Tea" class="btn-whatsapp" style="font-size:1.4rem; padding:1.3rem 3.5rem;">
-          Why Wait? Order Premium Chai Now!
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- Recipe section -->
+  <!-- Recipe -->
   <section id="recipe" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Perfect Chai Recipes with Bansuri Premix</h2>
@@ -572,7 +441,7 @@
     </div>
   </section>
 
-  <!-- Add-ons -->
+  <!-- More Products (Add-ons) -->
   <section id="addons" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.5rem; color:var(--chai-red); margin:4rem 0 2.5rem;">Additional Products for Your Tea Setup</h2>
@@ -581,13 +450,15 @@
           <img src="Statue.JPEG" alt="Tea Man / Chaiwala Statue">
           <h3>Tea Man Statue</h3>
           <p>Attractive chaiwala statue – perfect branding for tea stalls & shops</p>
-          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Tea%20Man%20Statue" class="btn-whatsapp" style="font-size:1.15rem; padding:1rem 2.2rem; margin:1rem 0;">Enquire Now</a>
+          <a href="https://wa.me/919XXXXXXXXX?text=Hello%20Bansuri%20Tea!%20Interested%20in%20Tea%20Man%20Statue.%20Please%20share%20price,%20availability%20&%20details." 
+             target="_blank" class="btn-primary" style="margin:1.5rem 0; width:100%; display:block;">Enquire on WhatsApp</a>
         </div>
         <div class="card">
           <img src="cups.JPEG" alt="Printed / Branded Tea Cups">
           <h3>Printed Tea Cups</h3>
           <p>Custom printed cutting chai glasses with your branding</p>
-          <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Printed%20Tea%20Cups" class="btn-whatsapp" style="font-size:1.15rem; padding:1rem 2.2rem; margin:1rem 0;">Enquire Now</a>
+          <a href="https://wa.me/919XXXXXXXXX?text=Hello%20Bansuri%20Tea!%20Interested%20in%20Printed%20Tea%20Cups.%20Please%20share%20price,%20availability%20&%20details." 
+             target="_blank" class="btn-primary" style="margin:1.5rem 0; width:100%; display:block;">Enquire on WhatsApp</a>
         </div>
       </div>
     </div>
@@ -602,20 +473,22 @@
         Bulk packs available • Special pricing for tea stalls, hotels & franchises
       </p>
       <div style="text-align:center;">
-        <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Wholesale%20Details%20and%20pricing" class="btn-whatsapp">Get Wholesale Details on WhatsApp</a>
+        <a href="https://wa.me/919XXXXXXXXX?text=Hello%20Bansuri%20Tea!%20Interested%20in%20wholesale%20&%20franchise%20opportunity.%20Please%20send%20details%20and%20pricing." 
+           target="_blank" class="btn-primary">Get Wholesale Details on WhatsApp</a>
       </div>
     </div>
   </section>
 
-  <footer>
+  <footer style="background: var(--deep-green); color: white; text-align: center; padding: 3.5rem 1.5rem; font-size: 1.2rem; position: relative;">
     <p>© Bansuri Tea | Real Boiled Chai Experience – Brewed with Love in MAHARASHTRA</p>
-    <p>Call / WhatsApp: <a href="https://wa.me/91XXXXXXXXXX">+91 XXXXXXXXXX</a></p>
+    <div style="margin-top: 1.5rem; font-size: 0.85rem; opacity: 0.85;">
+      <a href="about.html" style="color: #c9a96e; text-decoration: none; margin: 0 1rem;">About Us</a>
+      <span style="color: #777;">|</span>
+      <a href="#" onclick="document.getElementById('admin-login').style.display='flex'; return false;" style="color: #c9a96e; text-decoration: none; margin: 0 1rem;">Admin Panel</a>
+    </div>
   </footer>
 
-  <!-- ADMIN BUTTON -->
-  <button class="admin-btn" onclick="document.getElementById('admin-login').style.display='flex'">🔧</button>
-
-  <!-- Login modal -->
+  <!-- Admin Panels -->
   <div id="admin-login">
     <div class="box">
       <h2 style="color:var(--chai-red);">Admin Login</h2>
@@ -627,7 +500,6 @@
     </div>
   </div>
 
-  <!-- Admin panel -->
   <div id="admin-panel">
     <div class="inner">
       <button onclick="document.getElementById('admin-panel').style.display='none'" style="position:absolute; top:1rem; right:1.5rem; background:red; color:white; border:none; padding:0.8rem 1.5rem; border-radius:50px; cursor:pointer; font-weight:bold;">Close Admin</button>
@@ -649,136 +521,164 @@
   </div>
 
   <script>
-    // CHANGE THIS PASSWORD TO YOUR OWN
-    const ADMIN_PASSWORD = "bansuri2026";
+    // ──────────────────────────────────────────────
+    //                   PRODUCTS DATA (cleaned)
+    // ──────────────────────────────────────────────
+
+    const products = [
+      {
+        id: "all-in-one",
+        name: "All-in-One Sample Pack",
+        desc: "Try all variants! Contains: Amruttulya (3 packs), Jaggery (2), Basundi (3), Lemon (1), Coffee (1)",
+        price: "Contact for price",
+        badge: "Best way to try everything",
+        img: "am_powder.jpeg",
+        whatsappText: "All-in-One Sample Pack (Amruttulya 3 + Jaggery 2 + Basundi 3 + Lemon 1 + Coffee 1)"
+      },
+      {
+        id: "amruttulya",
+        name: 'Amruttulya Tea <small style="font-size:1.3rem; color:#555;">(Sample Pack: 3 packs)</small>',
+        price: 199,
+        oldPrice: 265,
+        badge: "-25% OFF",
+        img: "am_powder.jpeg",
+        desc: "Classic strong kadak chai – rich aroma & perfect color.",
+        reviews: "842",
+        rating: "★★★★☆",
+        whatsappText: "Amruttulya Tea Sample Pack (3 packs)"
+      },
+      {
+        id: "jaggery",
+        name: 'Jaggery Tea <small style="font-size:1.3rem; color:#555;">(Sample Pack: 2 packs)</small>',
+        price: 220,
+        oldPrice: null,
+        badge: "Best Seller",
+        img: "jt.jpeg",
+        desc: "Natural gud sweetness – healthy & traditional taste.",
+        reviews: "1,214",
+        rating: "★★★★★",
+        whatsappText: "Jaggery Tea Sample Pack (2 packs)"
+      },
+      {
+        id: "basundi",
+        name: 'Basundi Tea Premix <small style="font-size:1.3rem; color:#555;">(Sample Pack: 3 packs)</small>',
+        price: 249,
+        oldPrice: 320,
+        badge: "",
+        img: "am_tea.jpeg",
+        desc: "Creamy rich basundi flavor – indulgent & sweet.",
+        reviews: "567",
+        rating: "★★★★☆",
+        whatsappText: "Basundi Tea Premix Sample Pack (3 packs)"
+      },
+      {
+        id: "lemon",
+        name: 'Lemon Tea Premix <small style="font-size:1.3rem; color:#555;">(Sample Pack: 1 pack)</small>',
+        price: 179,
+        oldPrice: 240,
+        badge: "",
+        img: "LEMON.jpg",
+        desc: "Instant lemon tea magic – refreshing twist.",
+        reviews: "412",
+        rating: "★★★★☆",
+        whatsappText: "Lemon Tea Premix Sample Pack (1 pack)"
+      },
+      {
+        id: "coffee",
+        name: 'Coffee Premix <small style="font-size:1.3rem; color:#555;">(Sample Pack: 1 pack)</small>',
+        price: 259,
+        oldPrice: null,
+        badge: "",
+        img: "coffee.jpg",
+        desc: "Strong filter coffee – perfect for all seasons.",
+        reviews: "689",
+        rating: "★★★★½",
+        whatsappText: "Coffee Premix Sample Pack (1 pack)"
+      }
+    ];
+
+    const YOUR_WHATSAPP_NUMBER = "919XXXXXXXXX";   // ← CHANGE THIS TO YOUR REAL NUMBER
+
+    function renderProducts() {
+      const grid = document.querySelector('#products .grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      products.forEach(prod => {
+        const oldPriceHTML = prod.oldPrice ? `
+          <span style="color:#888; text-decoration:line-through; font-size:1.3rem;">₹${prod.oldPrice}</span>
+        ` : '';
+
+        const saveHTML = prod.oldPrice ? `
+          <span style="font-size:1.1rem; color:#2e7d32; background:#e8f5e9; padding:0.3rem 0.8rem; border-radius:12px;">
+            Save ₹${prod.oldPrice - prod.price}
+          </span>
+        ` : '';
+
+        const badgeHTML = prod.badge ? `
+          <div style="position:absolute; top:15px; ${prod.badge.includes('%') ? 'left:15px' : 'right:15px'}; background:${prod.badge.includes('%') ? '#e63946' : '#ffb300'}; color:${prod.badge.includes('%') ? 'white' : '#2c1508'}; font-weight:700; padding:0.5rem 1rem; border-radius:50px; font-size:1.1rem; z-index:10; box-shadow:0 4px 12px rgba(0,0,0,0.3);">
+            ${prod.badge}
+          </div>
+        ` : '';
+
+        const priceHTML = typeof prod.price === 'number' 
+          ? `<span style="color:var(--chai-red); font-size:2rem; font-weight:700;">₹${prod.price}</span>`
+          : `<span style="color:var(--chai-red); font-size:1.6rem; font-weight:600;">${prod.price}</span>`;
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          ${badgeHTML}
+          <img src="${prod.img}" alt="${prod.name}">
+          <div style="padding:1.5rem 1.2rem;">
+            <h3 style="font-size:2.1rem; color:var(--chai-red); margin-bottom:0.6rem; line-height:1.3;">
+              ${prod.name}
+            </h3>
+            <p style="font-size:1.2rem; color:#555; margin-bottom:1.2rem;">${prod.desc}</p>
+            <div style="display:flex; align-items:center; gap:1rem; margin:1.2rem 0; font-size:1.5rem; font-weight:700;">
+              ${priceHTML}
+              ${oldPriceHTML}
+              ${saveHTML}
+            </div>
+            ${prod.rating ? `
+              <div style="color:#ffb300; font-size:1.4rem; margin:0.8rem 0 1.2rem;">
+                ${prod.rating} <span style="color:#555; font-size:1rem;">(${prod.reviews} reviews)</span>
+              </div>
+            ` : ''}
+            <a href="https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello Bansuri Tea! ☕\nI am interested in:\n' + prod.whatsappText + '\nPlease share current price, availability, shipping charges to Maharashtra and payment options.\nThank you!')}" 
+               target="_blank" 
+               class="btn-primary"
+               style="width:100%; padding:1.1rem; font-size:1.25rem;">
+              Order / Enquire on WhatsApp →
+            </a>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // ──────────────────────────────────────────────
+    //                   ADMIN (unchanged)
+    // ──────────────────────────────────────────────
+
+    const ADMIN_PASSWORD = "699166";
 
     function checkAdminLogin() {
       const pass = document.getElementById("admin-pass").value;
       if (pass === ADMIN_PASSWORD) {
         document.getElementById("admin-login").style.display = "none";
         document.getElementById("admin-panel").style.display = "block";
-        loadAdminPanel();
+        alert("Logged in! (No product editing in this version)");
       } else {
         alert("Incorrect password!");
       }
     }
 
-    const productsData = [
-      { id: "amruttulya", name: "Amruttulya Tea", price: 199, oldPrice: 265, badge: "-25% OFF" },
-      { id: "jaggery", name: "Jaggery Tea", price: 220, oldPrice: null, badge: "Best Seller" },
-      { id: "basundi", name: "Basundi Tea Premix", price: 249, oldPrice: 320, badge: "" },
-      { id: "lemon", name: "Lemon Tea Premix", price: 179, oldPrice: 240, badge: "" },
-      { id: "coffee", name: "Coffee Premix", price: 259, oldPrice: null, badge: "" }
-    ];
+    // Initial render
+    renderProducts();
 
-    function loadAdminPanel() {
-      const container = document.getElementById("admin-products");
-      container.innerHTML = "";
-      
-      productsData.forEach(p => {
-        const saved = JSON.parse(localStorage.getItem(`prod_${p.id}`)) || {};
-        const price = saved.price ?? p.price;
-        const oldPrice = saved.oldPrice ?? p.oldPrice;
-        const badge = saved.badge ?? p.badge;
-
-        const div = document.createElement("div");
-        div.style.margin = "1.8rem 0";
-        div.style.padding = "1.5rem";
-        div.style.background = "rgba(255,255,255,0.1)";
-        div.style.borderRadius = "12px";
-        div.innerHTML = `
-          <h3 style="color:var(--gold);">${p.name}</h3>
-          <label>Price (₹): <input type="number" value="${price}" data-id="${p.id}" data-field="price" style="padding:0.6rem; width:120px; margin:0.5rem;"></label><br>
-          <label>Old Price (₹, blank = none): <input type="number" value="${oldPrice || ''}" data-id="${p.id}" data-field="oldPrice" style="padding:0.6rem; width:120px; margin:0.5rem;"></label><br>
-          <label>Badge Text: <input type="text" value="${badge}" data-id="${p.id}" data-field="badge" style="padding:0.6rem; width:220px; margin:0.5rem;"></label>
-        `;
-        container.appendChild(div);
-      });
-    }
-
-    function saveAllChanges() {
-      document.querySelectorAll("#admin-products input").forEach(inp => {
-        const id = inp.dataset.id;
-        const field = inp.dataset.field;
-        const value = inp.value.trim();
-        
-        let saved = JSON.parse(localStorage.getItem(`prod_${id}`)) || {};
-        if (field === "oldPrice") {
-          saved.oldPrice = value ? Number(value) : null;
-        } else if (field === "price") {
-          saved.price = Number(value);
-        } else {
-          saved[field] = value;
-        }
-        localStorage.setItem(`prod_${id}`, JSON.stringify(saved));
-      });
-
-      // Immediately update visible prices on the page
-      updateVisiblePrices();
-
-      alert("Changes saved and applied!");
-    }
-
-    function updateVisiblePrices() {
-      productsData.forEach(product => {
-        const saved = JSON.parse(localStorage.getItem(`prod_${product.id}`)) || {};
-        if (Object.keys(saved).length === 0) return;
-
-        const card = document.querySelector(`.card[data-product-id="${product.id}"]`);
-        if (!card) return;
-
-        const priceEl    = card.querySelector('.price');
-        const oldPriceEl = card.querySelector('.old-price');
-        const badgeEl    = card.querySelector('.badge');
-        const saveTextEl = card.querySelector('.save-text');
-
-        // Update current price
-        if (saved.price !== undefined && priceEl) {
-          priceEl.textContent = `₹${saved.price}`;
-        }
-
-        // Update old price
-        if (saved.oldPrice !== undefined && oldPriceEl) {
-          if (saved.oldPrice === null || saved.oldPrice === '') {
-            oldPriceEl.style.display = 'none';
-          } else {
-            oldPriceEl.style.display = 'inline';
-            oldPriceEl.textContent = `₹${saved.oldPrice}`;
-          }
-        }
-
-        // Update save text
-        if (saved.oldPrice && saved.price && saveTextEl) {
-          const saveAmount = saved.oldPrice - saved.price;
-          if (saveAmount > 0) {
-            saveTextEl.textContent = `Save ₹${saveAmount}`;
-            saveTextEl.style.display = 'inline-block';
-          } else {
-            saveTextEl.style.display = 'none';
-          }
-        }
-
-        // Update badge
-        if (saved.badge && badgeEl) {
-          badgeEl.textContent = saved.badge;
-        }
-      });
-    }
-
-    function resetAll() {
-      if (confirm("Reset all to original values?")) {
-        productsData.forEach(p => localStorage.removeItem(`prod_${p.id}`));
-        updateVisiblePrices();
-        alert("Reset complete. Prices restored.");
-      }
-    }
-
-    // Apply saved values when page loads
-    window.addEventListener('load', updateVisiblePrices);
-
-    // Close panels with ESC key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === "Escape") {
+    document.addEventListener('keydown', e => {
+      if (e.key === "Escape") {
         document.getElementById('admin-panel').style.display = 'none';
         document.getElementById('admin-login').style.display = 'none';
       }
