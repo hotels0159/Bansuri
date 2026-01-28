@@ -291,7 +291,6 @@
       max-width: 450px;
     }
 
-    /* ── IMPROVED MODAL ── */
     #enquiry-modal {
       display: none;
       position: fixed;
@@ -299,10 +298,10 @@
       background: rgba(0,0,0,0.75);
       z-index: 10000;
       justify-content: center;
-      align-items: flex-start;           /* Start from top – better for keyboard */
-      overflow-y: auto;                  /* Allow scrolling */
+      align-items: flex-start;
+      overflow-y: auto;
       padding: 1rem;
-      -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
+      -webkit-overflow-scrolling: touch;
     }
 
     .modal-content {
@@ -313,7 +312,7 @@
       padding: 2.2rem;
       position: relative;
       box-shadow: 0 15px 50px rgba(0,0,0,0.4);
-      margin: 5vh auto;                  /* Space from top + auto centering */
+      margin: 5vh auto;
       min-height: 40vh;
     }
 
@@ -335,7 +334,7 @@
     }
 
     .form-group {
-      margin-bottom: 1.6rem;             /* Slightly more space */
+      margin-bottom: 1.6rem;
     }
 
     .form-group label {
@@ -366,7 +365,7 @@
       outline: none;
       border-color: var(--chai-red);
       box-shadow: 0 0 0 3px rgba(165,42,42,0.15);
-      margin-bottom: 2.5rem;           /* Extra space when keyboard is open */
+      margin-bottom: 2.5rem;
     }
 
     #submit-enquiry {
@@ -446,7 +445,7 @@
     </div>
   </section>
 
-  <!-- Why Choose Us -->
+  <!-- Why Choose Us section remains unchanged -->
   <section id="why" class="tea-vibe-bg why-section">
     <div class="container">
       <h2 style="font-size:4.2rem; color:var(--chai-red); margin:5rem 0 1.5rem; text-shadow: 1px 1px 3px rgba(0,0,0,0.25);">
@@ -494,7 +493,7 @@
     </div>
   </section>
 
-  <!-- Recipe -->
+  <!-- Recipe section remains unchanged -->
   <section id="recipe" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Perfect Chai Recipes with Bansuri Premix</h2>
@@ -528,7 +527,7 @@
     </div>
   </section>
 
-  <!-- More Products (Add-ons) -->
+  <!-- Add-ons and Wholesale sections remain unchanged -->
   <section id="addons" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.5rem; color:var(--chai-red); margin:4rem 0 2.5rem;">Additional Products for Your Tea Setup</h2>
@@ -537,23 +536,18 @@
           <img src="Statue.JPEG" alt="Tea Man / Chaiwala Statue">
           <h3>Tea Man Statue</h3>
           <p>Attractive chaiwala statue – perfect branding for tea stalls & shops</p>
-          <a href="#" 
-             onclick="openEnquiryModal('Tea Man Statue'); return false;"
-             class="btn-primary" style="margin:1.5rem 0; width:100%; display:block;">Enquire on WhatsApp</a>
+          <a href="#" onclick="openEnquiryModal('Tea Man Statue'); return false;" class="btn-primary" style="margin:1.5rem 0; width:100%; display:block;">Enquire on WhatsApp</a>
         </div>
         <div class="card">
           <img src="cups.JPEG" alt="Printed / Branded Tea Cups">
           <h3>Printed Tea Cups</h3>
           <p>Custom printed cutting chai glasses with your branding</p>
-          <a href="#" 
-             onclick="openEnquiryModal('Printed Tea Cups'); return false;"
-             class="btn-primary" style="margin:1.5rem 0; width:100%; display:block;">Enquire on WhatsApp</a>
+          <a href="#" onclick="openEnquiryModal('Printed Tea Cups'); return false;" class="btn-primary" style="margin:1.5rem 0; width:100%; display:block;">Enquire on WhatsApp</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Wholesale -->
   <section id="wholesale" class="tea-vibe-bg">
     <div class="container">
       <h2 style="text-align:center; font-size:3.8rem; color:var(--chai-red); margin:4rem 0 2rem;">Wholesale & Franchise Opportunity</h2>
@@ -562,9 +556,7 @@
         Bulk packs available • Special pricing for tea stalls, hotels & franchises
       </p>
       <div style="text-align:center;">
-        <a href="#" 
-           onclick="openEnquiryModal('Wholesale & Franchise Opportunity'); return false;"
-           class="btn-primary">Get Wholesale Details on WhatsApp</a>
+        <a href="#" onclick="openEnquiryModal('Wholesale & Franchise Opportunity'); return false;" class="btn-primary">Get Wholesale Details on WhatsApp</a>
       </div>
     </div>
   </section>
@@ -656,18 +648,18 @@
 
   <script>
     // ──────────────────────────────────────────────
-    //                   PRODUCTS DATA
+    //               PRODUCTS DATA – updated description
     // ──────────────────────────────────────────────
 
-    const products = [
+    let products = JSON.parse(localStorage.getItem('bansuriProducts')) || [
       {
         id: "all-in-one",
         name: "All-in-One Sample Pack",
-        desc: "Try all variants! Contains: Amruttulya (3 packs), Jaggery (2), Basundi (3), Lemon (1), Coffee (1)",
+        desc: "All-in-One Sample Pack – Best way to try our complete range!",
         price: 300,
         oldPrice: null,
         badge: "Best Value",
-        img: "am_powder.jpeg",
+        img: "ALLINonE.jpeg",
         whatsappText: "All-in-One Sample Pack (Amruttulya 3 + Jaggery 2 + Basundi 3 + Lemon 1 + Coffee 1)",
         reviews: "320",
         rating: "★★★★★"
@@ -742,10 +734,7 @@
       currentProductName = productName;
       document.getElementById("enquiry-modal").style.display = "flex";
       document.getElementById("enquiry-form").reset();
-      // Optional: slight delay to ensure modal is visible before focusing
-      setTimeout(() => {
-        document.getElementById("customer-name").focus();
-      }, 100);
+      setTimeout(() => document.getElementById("customer-name").focus(), 100);
     }
 
     function closeEnquiryModal() {
@@ -781,6 +770,22 @@
       closeEnquiryModal();
     });
 
+    function showAllInOneDetails() {
+      alert(
+        "All-in-One Sample Pack – Perfect combo!\n\n" +
+        "Contains:\n" +
+        "• Amruttulya × 3 packs\n" +
+        "• Jaggery Chai × 2 packs\n" +
+        "• Basundi Chai × 3 packs\n" +
+        "• Lemon Tea × 1 pack\n" +
+        "• Coffee Premix × 1 pack\n\n" +
+        "Total: 10 packs\n" +
+        "Ideal for: new customers, small tea stalls, home/office tasting\n" +
+        "Brewing: 1 pack ≈ 80–100 strong cups (depending on strength)\n\n" +
+        "→ Best value • Most popular combo"
+      );
+    }
+
     function renderProducts() {
       const grid = document.querySelector('#products .grid');
       if (!grid) return;
@@ -807,32 +812,46 @@
           ? `<span style="color:var(--chai-red); font-size:2rem; font-weight:700;">₹${prod.price}</span>`
           : `<span style="color:var(--chai-red); font-size:1.6rem; font-weight:600;">${prod.price}</span>`;
 
+        const buttonsHTML = `
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 1.5rem; justify-content: center;">
+            <a href="#" 
+               onclick="openEnquiryModal('${prod.name.replace(/'/g, "\\'")}'); return false;"
+               class="btn-primary"
+               style="flex: 1 1 45%; min-width: 220px; max-width: 320px; padding: 1.1rem 1.8rem; font-size: 1.18rem; text-align: center;">
+              Order on WhatsApp →
+            </a>
+            
+            ${prod.id === "all-in-one" ? `
+              <a href="#" 
+                 onclick="showAllInOneDetails(); return false;"
+                 style="flex: 1 1 45%; min-width: 220px; max-width: 320px; padding: 1.1rem 1.8rem; font-size: 1.18rem; background: #2e7d32; color: white; border-radius: 50px; text-align: center; font-weight: 600; box-shadow: 0 5px 14px rgba(0,0,0,0.25);">
+                View Details
+              </a>
+            ` : ''}
+          </div>
+        `;
+
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
           ${badgeHTML}
           <img src="${prod.img}" alt="${prod.name}">
-          <div style="padding:1.5rem 1.2rem;">
-            <h3 style="font-size:2.1rem; color:var(--chai-red); margin-bottom:0.6rem; line-height:1.3;">
+          <div style="padding:1.6rem 1.3rem;">
+            <h3 style="font-size:2.1rem; color:var(--chai-red); margin-bottom:0.7rem; line-height:1.3;">
               ${prod.name}
             </h3>
-            <p style="font-size:1.2rem; color:#555; margin-bottom:1.2rem;">${prod.desc}</p>
-            <div style="display:flex; align-items:center; gap:1rem; margin:1.2rem 0; font-size:1.5rem; font-weight:700; flex-wrap:wrap; justify-content:center;">
+            <p style="font-size:1.2rem; color:#555; margin-bottom:1.3rem;">${prod.desc}</p>
+            <div style="display:flex; align-items:center; gap:1.2rem; margin:1.3rem 0; font-size:1.5rem; font-weight:700; flex-wrap:wrap; justify-content:center;">
               ${priceHTML}
               ${oldPriceHTML}
               ${saveHTML}
             </div>
             ${prod.rating ? `
-              <div style="color:#ffb300; font-size:1.4rem; margin:0.8rem 0 1.2rem;">
+              <div style="color:#ffb300; font-size:1.4rem; margin:0.9rem 0 1.3rem;">
                 ${prod.rating} <span style="color:#555; font-size:1rem;">(${prod.reviews} reviews)</span>
               </div>
             ` : ''}
-            <a href="#" 
-               onclick="openEnquiryModal('${prod.name.replace(/'/g, "\\'")}'); return false;"
-               class="btn-primary"
-               style="width:100%; padding:1.1rem; font-size:1.25rem;">
-              Order / Enquire on WhatsApp →
-            </a>
+            ${buttonsHTML}
           </div>
         `;
         grid.appendChild(card);
@@ -840,23 +859,96 @@
     }
 
     // ──────────────────────────────────────────────
-    //                   ADMIN (unchanged)
+    //                   ADMIN FUNCTIONS
     // ──────────────────────────────────────────────
 
-    const ADMIN_PASSWORD = "699166";
+    const ADMIN_PASSWORD = "699166"; // ← CHANGE THIS TO YOUR OWN SECRET PASSWORD
+
+    function saveProducts() {
+      localStorage.setItem('bansuriProducts', JSON.stringify(products));
+    }
+
+    function renderAdminProducts() {
+      const container = document.getElementById("admin-products");
+      if (!container) return;
+
+      container.innerHTML = '<h3 style="color:var(--gold); margin:2rem 0 1rem;">Edit Product Prices & Badges</h3>';
+
+      products.forEach((prod, index) => {
+        const oldPriceVal = prod.oldPrice || '';
+        const badgeVal = prod.badge || '';
+
+        const block = document.createElement('div');
+        block.style.cssText = 'background:#3d1f0f; padding:1.5rem; border-radius:12px; margin-bottom:1.8rem; border:1px solid var(--gold);';
+        block.innerHTML = `
+          <h4 style="margin:0 0 1rem; color:var(--gold);">${prod.name} (${prod.id})</h4>
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.2rem;">
+            <div>
+              <label style="display:block; color:#ccc; margin-bottom:0.4rem;">Price (₹)</label>
+              <input type="number" value="${prod.price}" data-index="${index}" data-field="price" 
+                     style="width:100%; padding:0.8rem; font-size:1.1rem;">
+            </div>
+            <div>
+              <label style="display:block; color:#ccc; margin-bottom:0.4rem;">Old Price (₹) – empty = no discount</label>
+              <input type="number" value="${oldPriceVal}" data-index="${index}" data-field="oldPrice" 
+                     style="width:100%; padding:0.8rem; font-size:1.1rem;">
+            </div>
+          </div>
+          
+          <div style="margin-top:1.2rem;">
+            <label style="display:block; color:#ccc; margin-bottom:0.4rem;">Badge (e.g. -25% OFF, Best Seller, New – empty = hide)</label>
+            <input type="text" value="${badgeVal}" data-index="${index}" data-field="badge" 
+                   placeholder="leave empty to hide badge" 
+                   style="width:100%; padding:0.8rem; font-size:1.1rem;">
+          </div>
+        `;
+        container.appendChild(block);
+      });
+
+      container.querySelectorAll('input').forEach(input => {
+        input.addEventListener('input', function() {
+          const index = parseInt(this.dataset.index);
+          const field = this.dataset.field;
+          let value = this.value.trim();
+          
+          if (field === 'price' || field === 'oldPrice') {
+            value = value === '' ? null : Number(value);
+          }
+          
+          products[index][field] = value;
+        });
+      });
+    }
+
+    function saveAllChanges() {
+      saveProducts();
+      renderProducts();
+      alert("Changes saved! Refresh page if needed.");
+    }
+
+    function resetAll() {
+      if (confirm("Reset ALL products to original default values?")) {
+        localStorage.removeItem('bansuriProducts');
+        location.reload();
+      }
+    }
 
     function checkAdminLogin() {
       const pass = document.getElementById("admin-pass").value;
       if (pass === ADMIN_PASSWORD) {
         document.getElementById("admin-login").style.display = "none";
-        document.getElementById("admin-panel").style.display = "block";
-        alert("Logged in! (No product editing in this version)");
+        document.getElementById("admin-panel").style.display = "flex";
+        renderAdminProducts();
       } else {
         alert("Incorrect password!");
       }
     }
 
-    // Initial render
+    // ──────────────────────────────────────────────
+    //                   INITIALIZE
+    // ──────────────────────────────────────────────
+
     renderProducts();
 
     document.addEventListener('keydown', e => {
